@@ -1,128 +1,183 @@
-body{
+/* Reset and Base Styles */
+body {
 	margin: 0;
 	padding: 0;
 	font-size: 16px;
-	line-height: 1.5;
-	font-family: sans-serif;
-	background-color: #e7e7e7;
+	line-height: 1.6;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #f5f5f5;
 }
-a{
+
+/* Global Styles */
+a {
 	text-decoration: none;
 	color: white;
+	transition: color 0.3s ease;
 }
-.bottomlinks ul{
+
+a:hover {
+	color: #ddd;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Layout Components */
+.container {
+	display: flex;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+/* Header Styles */
+.header {
+	background-color: white;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	margin-bottom: 2rem;
+	padding: 1rem;
+	width: 100%;
+	text-align: center;
+}
+
+/* News Section */
+.news {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+}
+
+.article {
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	overflow: hidden;
+	transition: transform 0.3s ease;
+}
+
+.article:hover {
+	transform: translateY(-5px);
+}
+
+.articlecontent {
+	padding: 1.5rem;
+}
+
+/* Sidebar Styles */
+.sidebar {
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pins {
+	padding: 1.5rem;
+	margin-bottom: 1rem;
+	background-color: white;
+	border-radius: 8px;
+}
+
+/* Footer Styles */
+.footer {
+	background-color: rgba(0, 0, 0, 0.96);
+	color: white;
+	padding: 2rem 0;
+	margin-top: 2rem;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.bottomlinks ul {
 	list-style: none;
 	padding: 0;
 }
 
-.news img,.sidebar img{
-	box-sizing: border-box;
+.bottomlinks li {
+	margin-bottom: 0.5rem;
+}
+
+/* Image Styles */
+.news img, 
+.sidebar img {
 	width: 100%;
-}
-.articlecontent{
-	padding: 1rem;
-}
-.article{
-	margin-bottom: 1rem;
-	margin-left: 1rem;
-	background-color:white;
-}
-.pins{
-	padding: 1rem;
-	margin-bottom: 1rem;
-	background-color:white;	
-}
-.footer{
-	background-color:rgba(0, 0, 0, 0.96);
-	color: white;
-}
-.footer .bottomlinks{
-	text-align: left;
-}
-.header{
-	background-color: white;
-	margin-bottom: 1rem;
-}
-img{
-	max-width: 100% ;                
+	object-fit: cover;
 }
 
-
-
-
-
-.container{
-	display: flex;
-}
-
-.header{
-	box-sizing: border-box;    
-	width:100%;
-	text-align: center;
-}
-.footer{
-	box-sizing: border-box;
-	width:100%;            
-}
- 
-.footer{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around; 
-}
-
-.news{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-}
-
-
-@media screen and (max-width: 520px){
-	.container{
+/* Responsive Design */
+/* Mobile Devices */
+@media screen and (max-width: 520px) {
+	.container {
 		flex-direction: column;
 	}
 	
+	.article {
+		margin: 0 0 1rem 0;
+	}
+	
+	.news {
+		margin-right: 0;
+	}
+	
+	.footer {
+		flex-direction: column;
+		text-align: center;
+	}
+	
+	.bottomlinks {
+		margin-bottom: 1.5rem;
+	}
 }
 
-@media screen and (min-width: 521px) and (max-width: 830px){
-	.container{
+/* Tablet Devices */
+@media screen and (min-width: 521px) and (max-width: 830px) {
+	.container {
 		flex-wrap: wrap;
+		gap: 1.5rem;
 	}
-	.news{
-		box-sizing: border-box;
-		flex:3;                
-		margin-right: 1rem;
+	
+	.news {
+		flex: 3;
 	}
-	.sidebar{
-		box-sizing: border-box;
-		flex:1;
+	
+	.sidebar {
+		flex: 1;
+	}
+	
+	.medium {
+		flex: 1 1 calc(50% - 1rem);
 	}
 }
 
-
-@media screen and (min-width: 831px){
-	.container{
+/* Desktop Devices */
+@media screen and (min-width: 831px) {
+	.container {
 		flex-wrap: wrap;
+		gap: 2rem;
 	}
-	.news{
-		box-sizing: border-box;
-		flex:3;                  
-		margin-right: 1rem;
+	
+	.news {
+		flex: 3;
 	}
-	.sidebar{
-		box-sizing: border-box;
-		flex:1;
-		
+	
+	.sidebar {
+		flex: 1;
 	}
-	.big{
-		width: 100%
+	
+	.big {
+		width: 100%;
 	}
-	.medium{
-		flex: 2;                  
+	
+	.medium {
+		flex: 2;
 	}
-	.small{
-		flex: 1; 
-    }                 
-
+	
+	.small {
+		flex: 1;
+	}
 }
